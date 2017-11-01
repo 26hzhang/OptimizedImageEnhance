@@ -7,7 +7,7 @@ It is a set of image/video enhancement methods, implemented by Java, to tackle s
 - [ImageEnhanceViaFusion](https://github.com/IsaacChanghau/ImageEnhanceViaFusion) -- will be deprecated, its zip file is available here: [[link]](/previous_standalone_repositories/ImageEnhanceViaFusion-master.zip)
 - HazeRemovalByDarkChannelPrior -- **Deleted**, its zip file is available here: [[link]](/previous_standalone_repositories/HazeRemovalByDarkChannelPrior-master.zip)
 - ALTMRetinex -- **Deleted**, its zip file is available here: [[link]](/previous_standalone_repositories/ALTMRetinex-master.zip)
-- [Image-Enhance-via-Retinex-and-DT-CWT](https://github.com/IsaacChanghau/Image-Enhance-via-Retinex-and-DT-CWT) -- will be deprecated, is zip file is available here: [[link]](/previous_standalone_repositories/Image-Enhance-via-Retinex-and-DT-CWT-master.zip)
+- [Image-Enhance-via-Retinex-and-DT-CWT](https://github.com/IsaacChanghau/Image-Enhance-via-Retinex-and-DT-CWT) -- will be deprecated, its zip file is available here: [[link]](/previous_standalone_repositories/Image-Enhance-via-Retinex-and-DT-CWT-master.zip)
 
 ## Description
 This Java project contains five different models for image/video enhancement methods as we as the MATLAB codes (in [`matlab`](/matlab/) directory) for each of them.
