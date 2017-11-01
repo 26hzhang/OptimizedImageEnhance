@@ -1,13 +1,13 @@
 # Fast Optimized Image/Video Enhancement Methods
 It is a set of image/video enhancement methods, implemented by Java, to tackle several common tasks, such as dehazing, denoising, underwater [backscatter](https://en.wikipedia.org/wiki/Backscatter) removal, low illuminance enhancement, featuring, smoothing and etc.
 
-**NOTE that** this repository is the integration of several repositories of Image/Video processing on [my GitHub](https://github.com/IsaacChanghau), and those single repositories will be **deprecated** later.
-- [RemoveBackScatter](https://github.com/IsaacChanghau/RemoveBackScatter)
-- [OptimizedContrastEnhance](https://github.com/IsaacChanghau/OptimizedContrastEnhance)
-- [ImageEnhanceViaFusion](https://github.com/IsaacChanghau/ImageEnhanceViaFusion)
-- [HazeRemovalByDarkChannelPrior](https://github.com/IsaacChanghau/HazeRemovalByDarkChannelPrior)
-- [ALTMRetinex](https://github.com/IsaacChanghau/ALTMRetinex)
-- [Image-Enhance-via-Retinex-and-DT-CWT](https://github.com/IsaacChanghau/Image-Enhance-via-Retinex-and-DT-CWT)
+**NOTE that** this repository is the integration of several repositories of Image/Video processing on [my GitHub](https://github.com/IsaacChanghau), and those standalone repositories will be **deprecated** later.
+- RemoveBackScatter -- **Deleted**, its zip file is available here: [[link]](/previous_standalone_repositories/RemoveBackScatter-master.zip).
+- OptimizedContrastEnhance -- **Deleted**, its zip file is available here: [[link]](/previous_standalone_repositories/OptimizedContrastEnhance-master.zip).
+- [ImageEnhanceViaFusion](https://github.com/IsaacChanghau/ImageEnhanceViaFusion) -- will be deprecated, its zip file is available here: [[link]](/previous_standalone_repositories/ImageEnhanceViaFusion-master.zip)
+- HazeRemovalByDarkChannelPrior -- **Deleted**, its zip file is available here: [[link]](/previous_standalone_repositories/HazeRemovalByDarkChannelPrior-master.zip)
+- ALTMRetinex -- **Deleted**, its zip file is available here: [[link]](/previous_standalone_repositories/ALTMRetinex-master.zip)
+- [Image-Enhance-via-Retinex-and-DT-CWT](https://github.com/IsaacChanghau/Image-Enhance-via-Retinex-and-DT-CWT) -- will be deprecated, is zip file is available here: [[link]](/previous_standalone_repositories/Image-Enhance-via-Retinex-and-DT-CWT-master.zip)
 
 ## Description
 This Java project contains five different models for image/video enhancement methods as we as the MATLAB codes (in [`matlab`](/matlab/) directory) for each of them.
