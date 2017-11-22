@@ -26,8 +26,7 @@ public class AirlightEstimate {
 			score[3] = calculateScore(subIm[3]);
 			int index = 0;
 			for (int i = 1; i < score.length; i++) {
-				if (score[index] < score[i])
-					index = i;
+				if (score[index] < score[i]) index = i;
 			}
 			img = subIm[index].clone();
 			rows = img.rows();
@@ -40,8 +39,7 @@ public class AirlightEstimate {
 		for (int i = 0; i < img.rows(); i++) {
 			for (int j = 0; j < img.cols(); j++) {
 				double[] data = img.get(i, j);
-				double tmpValue = Math.sqrt(Math.pow(data[0] - 255.0, 2.0) + Math.pow(data[1] - 255.0, 2.0) 
-									+ Math.pow(data[2] - 255.0, 2.0));
+				double tmpValue = Math.sqrt(Math.pow(data[0] - 255.0, 2.0) + Math.pow(data[1] - 255.0, 2.0) + Math.pow(data[2] - 255.0, 2.0));
 				if (pointValue > tmpValue) {
 					index_X = i;
 					index_Y = j;
@@ -59,9 +57,7 @@ public class AirlightEstimate {
 		double[] means = mean.get(0, 0);
 		double[] stds = std.get(0, 0);
 		double score = 0.0;
-		for (int i = 0; i < means.length; i++) {
-			score += means[i] - stds[i];
-		}
+		for (int i = 0; i < means.length; i++) score += means[i] - stds[i];
 		return score;
 	}
 

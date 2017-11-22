@@ -35,33 +35,25 @@ public class ALTMRetinex {
 		List<Mat> list = globalAdaptation(bChannel, gChannel, rChannel, m, n);
 		Mat Lw = list.get(0);
 		Mat Lg = list.get(1);
-
 		// Local Adaptation
 		Mat Hg = localAdaptation(Lg, m, n, r, eps, krnlRatio);
 		Lg.convertTo(Lg, CvType.CV_32F);
-
 		// process
 		Mat alpha = new Mat(m, n, rChannel.type());
 		Core.divide(Lg, new Scalar(Core.minMaxLoc(Lg).maxVal / eta), alpha);
 		//Core.multiply(alpha, new Scalar(eta), alpha);
 		Core.add(alpha, new Scalar(1.0), alpha);
 		//alpha = adjustment(alpha, 1.25);
-
 		Mat Lg_ = new Mat(m, n, rChannel.type());
 		Core.add(Lg, new Scalar(1.0 / 255.0), Lg_);
 		Core.log(Lg_, Lg_);
-
 		double beta = Math.exp(Core.sumElems(Lg_).val[0] / (m * n)) * lambda;
 		Mat Lout = new Mat(m, n, rChannel.type());
-
 		Core.divide(Lg, Hg, Lout);
 		Core.add(Lout, new Scalar(beta), Lout);
 		Core.log(Lout, Lout);
-
 		Core.normalize(alpha.mul(Lout), Lout, 0, 255, Core.NORM_MINMAX);
-
 		Mat gain = obtainGain(Lout, Lw, m, n);
-
 		// output
 		Core.divide(rChannel.mul(gain), new Scalar(Core.minMaxLoc(rChannel).maxVal / 255.0), rChannel); // Red Channel
 		Core.divide(gChannel.mul(gain), new Scalar(Core.minMaxLoc(gChannel).maxVal / 255.0), gChannel); // Green Channel

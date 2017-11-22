@@ -7,6 +7,7 @@ import java.util.List;
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
 
+@SuppressWarnings("all")
 public class ImgDecompose {
 	
 	public static Mat[] illuRefDecompose(Mat img) {

@@ -29,6 +29,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
+@SuppressWarnings("all")
 public class ImShow {
 
 	public JFrame Window;
@@ -55,7 +56,6 @@ public class ImShow {
 		SizeCustom = true;
 		Height = height;
 		Width = width;
-
 		Window = new JFrame();
 		image = new ImageIcon();
 		label = new JLabel();
@@ -93,9 +93,7 @@ public class ImShow {
 
 	public BufferedImage toBufferedImage(Mat m) {
 		int type = BufferedImage.TYPE_BYTE_GRAY;
-		if (m.channels() > 1) {
-			type = BufferedImage.TYPE_3BYTE_BGR;
-		}
+		if (m.channels() > 1) type = BufferedImage.TYPE_3BYTE_BGR;
 		int bufferSize = m.channels() * m.cols() * m.rows();
 		byte[] b = new byte[bufferSize];
 		m.get(0, 0, b); // get all the pixels
@@ -103,24 +101,16 @@ public class ImShow {
 		final byte[] targetPixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
 		System.arraycopy(b, 0, targetPixels, 0, b.length);
 		return image;
-
 	}
 
 	// Thanks to sutr90 for reporting the issue : https://github.com/sutr90
 
 	public void setCloseOption(int option) {
-
 		switch (option) {
-		case 0:
-			Window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-			break;
-		case 1:
-			Window.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-			break;
-		default:
-			Window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		case 0: Window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); break;
+		case 1: Window.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE); break;
+		default: Window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		}
-
 	}
 
 	/**
@@ -238,7 +228,6 @@ public class ImShow {
 	public static void show(Mat mat, Dimension frameSize, String frameTitle, boolean resizable, int closeOperation) {
 		ImShow frame = new ImShow(frameTitle, frameSize.height, frameSize.width);
 		frame.setResizable(resizable);
-
 		/*
 		 * This is a bad way to access the window, but due to legacy stuff I
 		 * won't change the access patterns
@@ -246,5 +235,4 @@ public class ImShow {
 		frame.Window.setDefaultCloseOperation(closeOperation);
 		frame.showImage(mat);
 	}
-
 }

@@ -7,6 +7,7 @@ import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
 
+@SuppressWarnings("all")
 public class BlkTransEstimate {
 
 	public static double blkEstimate(Mat blkIm, double[] airlight, double lambda, double fTrans) {
@@ -15,7 +16,7 @@ public class BlkTransEstimate {
 		double fMinCost = Double.MAX_VALUE;
 		int numberOfPixels = blkIm.rows() * blkIm.cols() * blkIm.channels();
 		double nCounter = 0.0;
-		List<Mat> bgr = new ArrayList<Mat>();
+		List<Mat> bgr = new ArrayList<>();
 		Core.split(blkIm, bgr);
 		while (nCounter < (1.0 - fTrans) * 10) {
 			// initial dehazing process to calculate the loss information
@@ -30,26 +31,16 @@ public class BlkTransEstimate {
 			double nSumOfLoss = 0.0;
 			for (int i = 0; i < bChannel.rows(); i++) {
 				for (int j = 0; j < bChannel.cols(); j++) {
-					if (bChannel.get(i, j)[0] > 255.0) {
-						nSumOfLoss += (bChannel.get(i, j)[0] - 255.0) * (bChannel.get(i, j)[0] - 255.0);
-					} else if (bChannel.get(i, j)[0] < 0.0) {
-						nSumOfLoss += bChannel.get(i, j)[0] * bChannel.get(i, j)[0];
-					}
-					if (gChannel.get(i, j)[0] > 255.0) {
-						nSumOfLoss += (gChannel.get(i, j)[0] - 255.0) * (gChannel.get(i, j)[0] - 255.0);
-					} else if (gChannel.get(i, j)[0] < 0.0) {
-						nSumOfLoss += gChannel.get(i, j)[0] * gChannel.get(i, j)[0];
-					}
-					if (rChannel.get(i, j)[0] > 255.0) {
-						nSumOfLoss += (rChannel.get(i, j)[0] - 255.0) * (rChannel.get(i, j)[0] - 255.0);
-					} else if (rChannel.get(i, j)[0] < 0.0) {
-						nSumOfLoss += rChannel.get(i, j)[0] * rChannel.get(i, j)[0];
-					}
+					if (bChannel.get(i, j)[0] > 255.0) nSumOfLoss += (bChannel.get(i, j)[0] - 255.0) * (bChannel.get(i, j)[0] - 255.0);
+					else if (bChannel.get(i, j)[0] < 0.0) nSumOfLoss += bChannel.get(i, j)[0] * bChannel.get(i, j)[0];
+					if (gChannel.get(i, j)[0] > 255.0) nSumOfLoss += (gChannel.get(i, j)[0] - 255.0) * (gChannel.get(i, j)[0] - 255.0);
+					else if (gChannel.get(i, j)[0] < 0.0) nSumOfLoss += gChannel.get(i, j)[0] * gChannel.get(i, j)[0];
+					if (rChannel.get(i, j)[0] > 255.0) nSumOfLoss += (rChannel.get(i, j)[0] - 255.0) * (rChannel.get(i, j)[0] - 255.0);
+					else if (rChannel.get(i, j)[0] < 0.0) nSumOfLoss += rChannel.get(i, j)[0] * rChannel.get(i, j)[0];
 				}
 			}
 			// calculate the value of sum of square out
-			double nSumOfSquareOuts = Core.sumElems(bChannel.mul(bChannel)).val[0] + Core.sumElems(gChannel.mul(gChannel)).val[0]
-					+ Core.sumElems(rChannel.mul(rChannel)).val[0];
+			double nSumOfSquareOuts = Core.sumElems(bChannel.mul(bChannel)).val[0] + Core.sumElems(gChannel.mul(gChannel)).val[0] + Core.sumElems(rChannel.mul(rChannel)).val[0];
 			// calculate the value of sum of out
 			double nSumOfOuts = Core.sumElems(bChannel).val[0] + Core.sumElems(gChannel).val[0] + Core.sumElems(rChannel).val[0];
 			// calculate the mean value of the block image
@@ -83,11 +74,8 @@ public class BlkTransEstimate {
 			double nSumOfLoss = 0.0;
 			for (int i = 0; i < channel.rows(); i++) {
 				for (int j = 0; j < channel.cols(); j++) {
-					if (channel.get(i, j)[0] > 255.0) {
-						nSumOfLoss += (channel.get(i, j)[0] - 255.0) * (channel.get(i, j)[0] - 255.0);
-					} else if (channel.get(i, j)[0] < 0.0) {
-						nSumOfLoss += channel.get(i, j)[0] * channel.get(i, j)[0];
-					}
+					if (channel.get(i, j)[0] > 255.0) nSumOfLoss += (channel.get(i, j)[0] - 255.0) * (channel.get(i, j)[0] - 255.0);
+					else if (channel.get(i, j)[0] < 0.0) nSumOfLoss += channel.get(i, j)[0] * channel.get(i, j)[0];
 				}
 			}
 			// calculate the value of sum of square out

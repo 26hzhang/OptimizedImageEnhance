@@ -63,8 +63,7 @@ public class FeatureWeight {
 		Imgproc.filter2D(img, localContrast, img.depth(), mask);
 		for (int i = 0; i < localContrast.rows(); i++) {
 			for (int j = 0; j < localContrast.cols(); j++) {
-				if (localContrast.get(i, j)[0] > Math.PI / 2.75)
-					localContrast.put(i, j, Math.PI / 2.75);
+				if (localContrast.get(i, j)[0] > Math.PI / 2.75) localContrast.put(i, j, Math.PI / 2.75);
 			}
 		}
 		Core.subtract(img, localContrast, localContrast);
@@ -97,12 +96,11 @@ public class FeatureWeight {
 		Mat rCnl = new Mat();
 		Core.extractChannel(img, rCnl, 2);
 		rCnl.convertTo(rCnl, CvType.CV_32F);
-		
 		Mat lum = new Mat(L.rows(), L.cols(), L.type());
 		for (int i = 0; i < L.rows(); i++) {
 			for (int j = 0; j < L.cols(); j++) {
-				double data = Math.sqrt( ( Math.pow(bCnl.get(i, j)[0] / 255.0 - L.get(i, j)[0], 2.0) + 
-						Math.pow(gCnl.get(i, j)[0] / 255.0 - L.get(i, j)[0], 2.0) + 
+				double data = Math.sqrt( ( Math.pow(bCnl.get(i, j)[0] / 255.0 - L.get(i, j)[0], 2.0) +
+						Math.pow(gCnl.get(i, j)[0] / 255.0 - L.get(i, j)[0], 2.0) +
 						Math.pow(rCnl.get(i, j)[0] / 255.0 - L.get(i, j)[0], 2.0) ) / 3 );
 				lum.put(i, j, data);
 			}
