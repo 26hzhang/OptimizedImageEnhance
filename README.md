@@ -1,4 +1,7 @@
 # Fast Optimized Image/Video Enhancement Methods
+
+![Authour](https://img.shields.io/badge/Author-Zhang%20Hao%20(Isaac%20Changhau)-blue.svg)
+
 It is a set of image/video enhancement methods, implemented by Java, to tackle several common tasks, such as dehazing, denoising, underwater [backscatter](https://en.wikipedia.org/wiki/Backscatter) removal, low illuminance enhancement, featuring, smoothing and etc.
 
 **NOTE that** this repository is the integration of several repositories of Image/Video processing on [my GitHub](https://github.com/IsaacChanghau), and those standalone repositories will be **deprecated** later.
