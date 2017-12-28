@@ -1,6 +1,6 @@
 # Fast Optimized Image/Video Enhancement Methods
 
-![Authour](https://img.shields.io/badge/Author-Zhang%20Hao%20(Isaac%20Changhau)-blue.svg)
+![Authour](https://img.shields.io/badge/Author-Zhang%20Hao%20(Isaac%20Changhau)-blue.svg) ![](https://img.shields.io/badge/Java-1.8-brightgreen.svg) ![](https://img.shields.io/badge/OpenCV-3.2.0-brightgreen.svg)
 
 It is a set of image/video enhancement methods, implemented by Java, to tackle several common tasks, such as dehazing, denoising, underwater [backscatter](https://en.wikipedia.org/wiki/Backscatter) removal, low illuminance enhancement, featuring, smoothing and etc.
 
