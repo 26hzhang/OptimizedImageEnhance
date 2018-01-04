@@ -10,7 +10,7 @@ It is a set of image/video enhancement methods, implemented by Java, to tackle s
 - [ImageEnhanceViaFusion](https://github.com/IsaacChanghau/ImageEnhanceViaFusion) -- will be deprecated, its zip file is available here: [[link]](/standalone_repos/ImageEnhanceViaFusion-master.zip)
 - HazeRemovalByDarkChannelPrior -- **Deleted**, its zip file is available here: [[link]](/standalone_repos/HazeRemovalByDarkChannelPrior-master.zip)
 - ALTMRetinex -- **Deleted**, its zip file is available here: [[link]](/standalone_repos/ALTMRetinex-master.zip)
-- [Image-Enhance-via-Retinex-and-DT-CWT](https://github.com/IsaacChanghau/Image-Enhance-via-Retinex-and-DT-CWT) -- **Deleted**, its zip file is available here: [[link]](/standalone_repos/Image-Enhance-via-Retinex-and-DT-CWT-master.zip)
+- Image-Enhance-via-Retinex-and-DT-CWT -- **Deleted**, its zip file is available here: [[link]](/standalone_repos/Image-Enhance-via-Retinex-and-DT-CWT-master.zip)
 
 ## Description
 This Java project contains five different models for image/video enhancement methods as we as the MATLAB codes (in [`matlab`](/matlab/) directory) for each of them.
@@ -28,7 +28,6 @@ Despite the above methods implemented in both Java and MATLAB, below contains se
 * [EnhanceViaRetinexDTCWT](/matlab/EnhanceViaRetinexDTCWT/), Image Enhancement Based on Retinex and Dual-Tree Complex Wavelet Transform, which is a efficient and effective method for enhancement of low-illuminance image/video. **Details and Results are shown here**: [[link]](/matlab/EnhanceViaRetinexDTCWT/).
 
 ## Requirements
-* [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 * [OpenCV](http://opencv.org/). To make the OpenCV can work with JAVA IDE, like IntelliJ or Eclipse, you may need to follow the guide of [[Install OpenCV for Java]](https://isaacchanghau.github.io/2017/04/10/Installing-OpenCV-for-Java/) to setup OpenCV.
 * [ImShow-Java-OpenCV](https://github.com/master-atul/ImShow-Java-OpenCV), a plain image display codes implemented by OpenCV Java version (This codes is already included in the project).
 
